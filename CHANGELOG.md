@@ -1,3 +1,4 @@
+- Adding the 'vector-blind-merge-with-dedupe' vector merge strategy
 - Adding the 'with-mixed-vector-map-merging' option
 - Adding the vector index merge strategy
 - Adding a few tests for what is covered below

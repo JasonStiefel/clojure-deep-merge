@@ -32,7 +32,7 @@
 ;; These methods define the various methods by which vectors can be merged ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defmacro with-vector-merge-method
-  "Adds a vector merge strategy to deep-merge"
+  "Adds a vector merge strategy to deep-merge."
   [method & body]
   `(binding [*vector-merge-method* ~method]
      ~@body))
@@ -45,7 +45,7 @@
     (last vectors)))
 (defn vector-index-merge
   "Looks at each index across all vectors and runs deep-merge on that.
-  If not all items are vectors, the last item is returned"
+  If not all items are vectors, the last item is returned."
   [& vectors]
   (if (every? vector? vectors)
     (let [max-index (max (map count vectors))
@@ -53,6 +53,13 @@
                                         #(not (nil? %))
                                         (map #(nth % index nil) vectors)))]
       (for [i (range 0 max-index)] (deep-merge (get-all-indexes i))))
+    (last vectors)))
+(defn vector-blind-merge-with-dedupe
+  "Does the same thing as blind merge, but applies distinct to the resulting vector.
+  If not all items are vectors, the last item is returned."
+  [& vectors]
+  (if (every? vector? vectors)
+    (distinct (apply concat vectors))
     (last vectors)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
