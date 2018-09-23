@@ -1,3 +1,5 @@
+- Adding the 'with-mixed-vector-map-merging' option
+- Adding the vector index merge strategy
 - Adding a few tests for what is covered below
 - Updating .gitignore adding a README and adding this file
 - Adding initial function for deep-merge
