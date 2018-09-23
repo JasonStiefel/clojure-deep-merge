@@ -1,0 +1,5 @@
+- Adding a few tests for what is covered below
+- Updating .gitignore adding a README and adding this file
+- Adding initial function for deep-merge
+- Adding initial handling for array merges
+- Adding clojure project
