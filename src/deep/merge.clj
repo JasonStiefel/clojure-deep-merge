@@ -1,18 +1,11 @@
 (ns deep.merge
   (:gen-class))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;L;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; These are variables needed for the main 'deep-merge' method of this project ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defonce ^:dynamic *vector-merge-method* nil)
 (defonce ^:dynamic *merge-mixed-vector-map-sets* false)
-(defmacro with-mixed-vector-map-merging
-  "deep-merges within this macro will allow mixed sets of vectors/maps to be merged.
-  This happens by taking maps and putting them into the first index of new vectors.
-  After the conversion happens, deep merge is called again."
-  [& body]
-  `(binding [*merge-mixed-vector-map-sets* true]
-     ~@body))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; This is the main method that can be used by redefining the above variables ;;
@@ -62,8 +55,19 @@
     (distinct (apply concat vectors))
     (last vectors)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Setting defaults for deep-merge ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Additional options for 'deep-merge' ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defmacro with-mixed-vector-map-merging
+  "deep-merges within this macro will allow mixed sets of vectors/maps to be merged.
+  This happens by taking maps and putting them into the first index of new vectors.
+  After the conversion happens, deep merge is called again."
+  [& body]
+  `(binding [*merge-mixed-vector-map-sets* true]
+     ~@body))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Setting defaults for 'deep-merge' ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;TODO: Get this working. I can't bind the root value even if I set the default to nil
 (alter-var-root (var *vector-merge-method*) vector-blind-merge)
