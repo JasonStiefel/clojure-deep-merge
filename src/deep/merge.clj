@@ -25,7 +25,7 @@
    (cond
      (every? map? obj-args) (apply merge-with deep-merge obj-args)
      (every? vector? obj-args) (apply *vector-merge-method* obj-args)
-     (and *merge-mixed-vector-map-sets* (every? #(or (map? %) (vector? %)) obj-args)) (deep-merge)
+     (and *merge-mixed-vector-map-sets* (every? #(or (map? %) (vector? %)) obj-args)) (deep-merge (map #(if (map? %) [%] %)))
      :always (last obj-args))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
