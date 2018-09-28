@@ -9,7 +9,11 @@ In order to make recommendations to this library, please,
 3. Make your changes to that branch
 4. Create a pull request from that branch to the master branch of this repository
 
-When you create the merge request, the value in `base fork` should be `JasonStiefel/clojure-deep-merge`, the branch should be `master`, your forked repository, created in step 1, should be in `head fork` and the `compare` value should be the branch you created in step 2.
+When you create the merge request, check the following values at the top where branches/repositories can be specified
+* `base fork` should be `JasonStiefel/clojure-deep-merge`
+* `base` should be `master`
+* `head fork` should be your forked repository, created in step 1
+* `compare` should be the branch you created in step 2
 
 ## Build Framework
 This incorporates [Leiningen](https://leiningen.org/) for its build/test/deploy process.
