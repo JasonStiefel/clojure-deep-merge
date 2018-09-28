@@ -2,6 +2,10 @@
 
 This acknowledge that merging could be simple or complex. Configuring merging should be easy and it should be robust. This library tackles some of the complexities of these statements. Please take a look at this [Clojure](https://clojure.org/) library and make any suggestions in pull requests or issues.
 
+You can use this library by adding it as a [dependency](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies):
+
+**https://clojars.org/clojure-deep-merge** 
+
 ## Merge Requests
 In order to make recommendations to this library, either please
 1. Fork this repository
