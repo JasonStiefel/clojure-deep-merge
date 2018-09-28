@@ -8,7 +8,7 @@ In order to make recommendations to this library, either please
 2. Create a branch (name it whatever you would like)
 3. Make your changes to that branch
 4. Run tests
-5. Create a pull request from that branch to the master branch of this repository. Check the following values when creating it:
+5. [Create a pull request from that branch of the forked repository to the master branch of this repository](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). Check the following values when creating it (steps 4 & 5):
    * `base fork` should be `JasonStiefel/clojure-deep-merge`
    * `base` should be `master`
    * `head fork` should be your forked repository, created in step 1
