@@ -41,11 +41,11 @@
   If not all items are vectors, the last item is returned."
   [& vectors]
   (if (every? vector? vectors)
-    (let [max-index (max (map count vectors))
+    (let [max-index (apply max (map count vectors))
           get-all-indexes (fn [index] (filter
                                         #(not (nil? %))
                                         (map #(nth % index nil) vectors)))]
-      (for [i (range 0 max-index)] (deep-merge (get-all-indexes i))))
+      (for [i (range 0 max-index)] (apply deep-merge (get-all-indexes i))))
     (last vectors)))
 (defn vector-blind-merge-with-dedupe
   "Does the same thing as blind merge, but applies distinct to the resulting vector.
