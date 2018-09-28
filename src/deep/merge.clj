@@ -69,5 +69,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Setting defaults for 'deep-merge' ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;TODO: Get this working. I can't bind the root value even if I set the default to nil
-(alter-var-root (var *vector-merge-method*) vector-blind-merge)
+(alter-var-root (var *vector-merge-method*) (constantly vector-blind-merge))
