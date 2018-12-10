@@ -13,7 +13,7 @@ At this point, merging is divided into 3 types of comparisons:
   * `concat-merge`/`concat-merge-with` - Puts all items into one vector
   * `distinct-merge`/`distinct-merge-with` - Puts all items into one deduplicated vector
   * `index-merge`/`index-merge-with` - Handled with recursive calls using all values at each index and puts the results in a vector
-* **Other** - For all functions that end with `-with` take a first parameter of a function that will handle these situations and all functions that do not use the value from the last argument passed in
+* **Other** - All functions that end with `-with` take a first parameter of a function that will handle these situations. All functions that lack this ending use the value from the last argument passed in
 
 ## Merge Requests
 In order to make recommendations to this library, either please
