@@ -1,4 +1,4 @@
-(defproject clojure-deep-merge "0.1.0"
+(defproject clojure-deep-merge "0.1.1"
   :url "https://github.com/JasonStiefel/clojure-deep-merge"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}

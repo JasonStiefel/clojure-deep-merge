@@ -1,3 +1,6 @@
+## 0.1.1
+- Accidentally made `index-merge-with` private
+
 ## 0.1.0
 - Re-writing such that there are no global variables, just partial private functions
 - Removing mixed map/vector merging
