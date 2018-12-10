@@ -8,12 +8,12 @@ You can use this library by adding it as a [dependency](https://github.com/techn
 
 ## Usage
 At this point, merging is divided into 3 types of comparisons:
-* All maps - Handled with a recursive call using [`merge-with`](https://clojuredocs.org/clojure.core/merge-with)
-* All non-map collections - Most of what has been considered so far
+* **All maps** - Handled with a recursive call using [`merge-with`](https://clojuredocs.org/clojure.core/merge-with)
+* **All non-map collections** - Most of what has been considered so far. These are the functions that can currently been used. All of them handle all merges, but they are tailored to handle non-map collections
   * `concat-merge`/`concat-merge-with` - Puts all items into one vector
   * `distinct-merge`/`distinct-merge-with` - Puts all items into one deduplicated vector
   * `index-merge`/`index-merge-with` - Handled with recursive calls using all values at each index and puts the results in a vector
-* Other - For all functions that end with `-with` take a first parameter of a function that will handle these situations and all functions that do not use the value from the last argument passed in
+* **Other** - For all functions that end with `-with` take a first parameter of a function that will handle these situations and all functions that do not use the value from the last argument passed in
 
 ## Merge Requests
 In order to make recommendations to this library, either please
