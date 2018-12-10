@@ -1,3 +1,8 @@
+## 0.1.0
+- Re-writing such that there are no global variables, just partial private functions
+- Removing mixed map/vector merging
+- Adding a lot more testing
+
 ## 0.0.1
 - Adding the 'vector-blind-merge-with-dedupe' vector merge strategy
 - Adding the 'with-mixed-vector-map-merging' option
