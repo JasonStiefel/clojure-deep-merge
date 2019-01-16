@@ -43,8 +43,10 @@
 ;;;;;;;;;;;;;;;;;;;;;
 (def concat-merge-with (partial deep-coll-merge-with concat-coll-merge))
 (def concat-merge (partial concat-merge-with #(last %&)))
+(def greedy-merge (partial concat-merge-with #(into [] %&)))
 (def distinct-merge-with (partial deep-coll-merge-with distinct-concat-coll-merge))
 (def distinct-merge (partial distinct-merge-with #(last %&)))
+(def greedy-distinct-merge (partial distinct-merge-with #(into [] (distinct %&))))
 (defn index-merge-with
   [non-collection-merge-method & vals]
   (apply deep-coll-merge-with (partial index-coll-merge non-collection-merge-method) non-collection-merge-method vals))

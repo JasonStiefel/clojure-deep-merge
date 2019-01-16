@@ -1,3 +1,6 @@
+## 0.1.2
+- Adding `greedy-merge` and `greedy-distinct-merge`, and adding documentation for these methods
+
 ## 0.1.1
 - Accidentally made `index-merge-with` private
 
